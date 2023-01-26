@@ -3,20 +3,18 @@
 De backend heeft wat voorwerk nodig. Hireonder is het beschreven:  
   
 Comakership Backend preparations  
-*Visual Studio  
-*Microsoft SQL Server Studio  
-- Server name: (localdb)\mssqllocaldb  
+  *Visual Studio  
+  *Microsoft SQL Server Studio  
+  - Server name: (localdb)\mssqllocaldb  
   
 MockData Query's anders loop je tegen errors!!!  
   
-// Mockdata zodat een student een opleiding kan kiezen om te registreren  
-Programs aanmaken  
+// Mockdata zodat een student een opleiding kan kiezen om te registreren    
 insert into [Comakerships].[dbo].[Programs] (Name) values ('Business IT & Management')   
 insert into [Comakerships].[dbo].[Programs] (Name) values ('Elektrotechniek')  
 insert into [Comakerships].[dbo].[Programs] (Name) values ('Applied Data Science & Artificial Intelligence')  
   
-// Mockdata zodat een company een comakership kan aanmaken  
-PurchaseKeys aanmaken  
+// Mockdata zodat een company een comakership kan aanmaken doormiddel van een purchaseKey aanmaken    
 USE [Comakerships]  
 GO  
 INSERT INTO [dbo].[PurchaseKeys]  
