@@ -1,0 +1,885 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Comakerships Api</name>
+    </assembly>
+    <members>
+        <member name="T:ComakershipsApi.Controllers.ComakershipController">
+            <summary>
+            class definition for the ComakershipController. It contains endpoints related to Comakerhips.
+            </summary>
+        </member>
+        <member name="M:ComakershipsApi.Controllers.ComakershipController.#ctor(Microsoft.Extensions.Logging.ILogger{ComakershipsApi.Controllers.ComakershipController},ServiceLayer.IComakershipService)">
+            <summary>
+            Constructor for the ComakershipController
+            </summary>
+        </member>
+        <member name="M:ComakershipsApi.Controllers.ComakershipController.GetAllComakerships(Microsoft.AspNetCore.Http.HttpRequest)">
+            <summary>
+            Finds and returns all Comakerships
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ComakershipsApi.Controllers.ComakershipController.GetComakership(Microsoft.AspNetCore.Http.HttpRequest,System.Int32)">
+            <summary>
+            Finds a Comakership by id
+            </summary>
+            <param name="id">Integer</param>
+            <param name="req"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ComakershipsApi.Controllers.ComakershipController.GetComakershipComplete(Microsoft.AspNetCore.Http.HttpRequest,System.Int32)">
+            <summary>
+            Finds a Comakership by id, includes related Deliverables and Skills
+            </summary>
+            <param name="id">Integer</param>
+            <param name="req"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ComakershipsApi.Controllers.ComakershipController.FindComakershipsBySkill(Microsoft.AspNetCore.Http.HttpRequest)">
+            <summary>
+            Finds Comakerships by search term on the required Skills
+            </summary>
+            <param name="req"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ComakershipsApi.Controllers.ComakershipController.AddComakership(Microsoft.AspNetCore.Http.HttpRequest,System.Security.Claims.ClaimsPrincipal)">
+            <summary>
+            Create a new Comakership
+            </summary>
+            <param name="req"></param>
+            <param name="User">ClaimsPrincipal</param>
+            <returns></returns>
+        </member>
+        <member name="M:ComakershipsApi.Controllers.ComakershipController.EditComakership(Microsoft.AspNetCore.Http.HttpRequest,System.Int32,System.Security.Claims.ClaimsPrincipal)">
+            <summary>
+            Edits a Comakership
+            </summary>
+            <param name="req">req</param>
+            <param name="id">Integer</param>
+            <param name="User">ClaimsPrincipal</param>
+            <returns></returns>
+        </member>
+        <member name="M:ComakershipsApi.Controllers.ComakershipController.AcceptApplication(Microsoft.AspNetCore.Http.HttpRequest,System.Security.Claims.ClaimsPrincipal,System.Int32,System.Int32)">
+            <summary>
+            Accepts the application for a comakership of a team
+            </summary>
+            <param name="req"></param>
+            <param name="User">ClaimsPrincipal</param>
+            <param name="comakershipid">Integer</param>
+            <param name="teamid">Integer</param>
+            <returns></returns>
+        </member>
+        <member name="M:ComakershipsApi.Controllers.ComakershipController.RejectApplication(Microsoft.AspNetCore.Http.HttpRequest,System.Security.Claims.ClaimsPrincipal,System.Int32,System.Int32)">
+            <summary>
+            Rejects the application for a comakership of a team
+            </summary>
+            <param name="req"></param>
+            <param name="User">ClaimsPrincipal</param>
+            <param name="comakershipid">Integer</param>
+            <param name="teamid">Integer</param>
+            <returns></returns>
+        </member>
+        <member name="M:ComakershipsApi.Controllers.ComakershipController.GetUserComakerships(Microsoft.AspNetCore.Http.HttpRequest,System.Security.Claims.ClaimsPrincipal)">
+            <summary>
+            gets the comakerships of the currently logged in user
+            </summary>
+            <param name="req"></param>
+            <param name="User">ClaimsPrincipal</param>
+            <returns></returns>
+        </member>
+        <member name="M:ComakershipsApi.Controllers.ComakershipController.GetComakershipApplications(Microsoft.AspNetCore.Http.HttpRequest,System.Int32,System.Security.Claims.ClaimsPrincipal)">
+            <summary>
+            Finds applications for a comakership
+            </summary>
+            <param name="id">Integer</param>
+            <param name="req"></param>
+            <param name="User">ClaimsPrincipal</param>
+            <returns></returns>
+        </member>
+        <member name="M:ComakershipsApi.Controllers.ComakershipController.LeaveComakership(Microsoft.AspNetCore.Http.HttpRequest,System.Security.Claims.ClaimsPrincipal,System.Int32)">
+            <summary>
+            allows a user to leave a comakership
+            </summary>
+            <param name="req"></param>
+            <param name="User">ClaimsPrincipal</param>
+            <param name="id">Integer</param>
+            <returns></returns>
+        </member>
+        <member name="M:ComakershipsApi.Controllers.ComakershipController.RemoveStudentFromComakership(Microsoft.AspNetCore.Http.HttpRequest,System.Security.Claims.ClaimsPrincipal,System.Int32,System.Int32)">
+            <summary>
+            allows a companyuser to remove a student from a comakership
+            </summary>
+            <param name="req"></param>
+            <param name="User">ClaimsPrincipal</param>
+            <param name="id">Integer</param>
+            <param name="studentid">Integer</param>
+            <returns></returns>
+        </member>
+        <member name="T:ComakershipsApi.Controllers.ComakershipStatusController">
+            <summary>
+            class definition for the ComakershipStatusController. It contains endpoints related to ComakerhipStatus.
+            </summary>
+        </member>
+        <member name="M:ComakershipsApi.Controllers.ComakershipStatusController.#ctor(Microsoft.Extensions.Logging.ILogger{ComakershipsApi.Controllers.ComakershipController},ServiceLayer.IStatusService)">
+            <summary>
+            Constructor for the ComakershipStatusController
+            </summary>
+        </member>
+        <member name="M:ComakershipsApi.Controllers.ComakershipStatusController.GetAllStatuses(Microsoft.AspNetCore.Http.HttpRequest)">
+            <summary>
+            This method returns a collections of all statuses
+            </summary>
+            <param name="req"></param>
+            <returns></returns>
+        </member>
+        <member name="T:ComakershipsApi.Controllers.ProgramController">
+            <summary>
+            class definition for the ProgramController. It contains endpoints related to Programs.
+            </summary>
+        </member>
+        <member name="M:ComakershipsApi.Controllers.ProgramController.#ctor(Microsoft.Extensions.Logging.ILogger{ComakershipsApi.Controllers.ProgramController},ServiceLayer.IProgramService)">
+            <summary>
+            Constructor for the ProgramController
+            </summary>
+        </member>
+        <member name="M:ComakershipsApi.Controllers.ProgramController.GetAllPrograms(Microsoft.AspNetCore.Http.HttpRequest)">
+            <summary>
+            This method returns a collections of all programs
+            </summary>
+            <param name="req"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ComakershipsApi.Controllers.ProgramController.GetProgram(Microsoft.AspNetCore.Http.HttpRequest,System.Int32)">
+            <summary>
+            This method returns a specific program entity from the provided id
+            </summary>
+            <param name="req"></param>
+            <param name="id">Integer</param>
+            <returns></returns>
+        </member>
+        <member name="T:ComakershipsApi.Controllers.ReviewController">
+            <summary>
+            class definition for the ReviewController. It contains endpoints related to Reviews.
+            </summary>
+        </member>
+        <member name="M:ComakershipsApi.Controllers.ReviewController.#ctor(Microsoft.Extensions.Logging.ILogger{ComakershipsApi.Controllers.ReviewController},Service.IReviewService)">
+            <summary>
+            Constructor for the ComakershipController
+            </summary>
+        </member>
+        <member name="M:ComakershipsApi.Controllers.ReviewController.ReviewPost(Microsoft.AspNetCore.Http.HttpRequest,System.Security.Claims.ClaimsPrincipal)">
+             <summary>
+             This method allows you to add a new review for a company
+             </summary>
+             <remarks>
+             Sample request to create a review without:
+            
+                 POST /api/review
+                 {
+                   "CompanyId" : 3,
+                   "StudentUserId" : 1,
+                   "Rating" : 8,
+                   "Comment" : "Dit bedrijf is top!",
+                   "ForCompany" : true
+                 }
+             </remarks>
+             <param name="req"></param>
+             <response code="200">Is returned when a review is successfully added.</response>
+             <response code="400">Is returned when the supplied review object is not valid. </response>
+        </member>
+        <member name="T:ComakershipsApi.CompanyController">
+            <summary>
+            class definition for the CompanyController endpoint. It retrieves everything related to companies.
+            </summary>
+        </member>
+        <member name="M:ComakershipsApi.CompanyController.#ctor(Microsoft.Extensions.Logging.ILogger{ComakershipsApi.CompanyController},Service.ICompanyService,AutoMapper.IMapper)">
+            <summary>
+            Function that uses the ILogger interface for logging capabilities.
+            </summary>
+            <param name="Logger"></param>
+            <param name="companyService"></param>
+            <param name="mapper"></param>
+        </member>
+        <member name="M:ComakershipsApi.CompanyController.CompaniesGet(Microsoft.AspNetCore.Http.HttpRequest)">
+            <summary>
+            This method allows you to retrieve a list of companies.
+            </summary>
+            <param name="req"></param>
+            <response code="200">Is returned when the list of companies is successfully retrieved.</response>
+        </member>
+        <member name="M:ComakershipsApi.CompanyController.CompanyGet(Microsoft.AspNetCore.Http.HttpRequest,System.Int32)">
+            <summary>
+            This method allows you to retrieve a single company based on it's ID.
+            </summary>
+            <param name="id"></param>
+            <param name="req"></param>
+            <response code="200">Is returned when a company is successfully retrieved.</response>
+            <response code="404">Is returned when the requested company isn't found.</response>
+        </member>
+        <member name="M:ComakershipsApi.CompanyController.CompanyComakershipsGet(Microsoft.AspNetCore.Http.HttpRequest,System.Int32)">
+            <summary>
+            This method allows you to retrieve a list of comakerships owned by the company, based on ID.
+            </summary>
+            <param name="id"></param>
+            <param name="req"></param>
+            <response code="200">Is returned when the comakerships are successfully retrieved from the requested company.</response>
+            <response code="404">Is returned when the requested company isn't found.</response>
+        </member>
+        <member name="M:ComakershipsApi.CompanyController.CompanyLogoGet(Microsoft.AspNetCore.Http.HttpRequest,System.Int32)">
+            <summary>
+            This method allows you to retrieve the logo/image of the company, 
+            </summary>
+            <param name="id"></param>
+            <param name="req"></param>
+            <response code="200">Is returned when the logo is successfully retrieved of the requested company.</response>
+            <response code="404">Is returned when the company hasn't uploaded a custom logo/image yet.</response>
+        </member>
+        <member name="M:ComakershipsApi.CompanyController.CompanyEmployeesGet(Microsoft.AspNetCore.Http.HttpRequest,System.Int32,System.Security.Claims.ClaimsPrincipal)">
+            <summary>
+            This method allows you to retrieve a list of registered employees.
+            </summary>
+            <param name="id"></param>
+            <param name="req"></param>
+            <param name="user"></param>
+            <response code="200">Is returned when the logo is successfully retrieved of the requested company.</response>
+        </member>
+        <member name="M:ComakershipsApi.CompanyController.CompanyLogoPost(Microsoft.AspNetCore.Http.HttpRequest,System.Int32,System.Security.Claims.ClaimsPrincipal)">
+             <summary>
+             This method allows you to post the logo/image of the company, 
+             </summary>
+             <remarks>
+             Sample request to upload an image/logo for an company:
+            
+                 POST /api/company/{id}/logo
+                 {
+                   "LogoAsBase64": "iVBORw0KGgoAAAANSUhEUgAAAAUAAAAFCAYAAACNbyblAAAAE0lEQVR42mNkZPhfz4AGGGkgCADAFgeBun8CWgAAAABJRU5ErkJggg=="
+                 }
+                 
+               
+              </remarks>     
+             <param name="id"></param>
+             <param name="req"></param>
+             <param name="user"></param>
+             <response code="200">Is returned when the logo is successfully retrieved of the requested company.</response>
+             <response code="404">Is returned when the company hasn't uploaded a custom logo/image yet.</response>
+        </member>
+        <member name="M:ComakershipsApi.CompanyController.CompanyPost(Microsoft.AspNetCore.Http.HttpRequest)">
+             <summary>
+             This method allows you to add a new company to the Comakerships App.
+             </summary>
+             <remarks>
+             Sample request to create an company without a logo:
+            
+                 POST /api/company
+                 {
+                   "name": "TestCompany",
+                   "description": "Insert very interesting description here",
+                   "street": "Teststreet 13",
+                   "city": "Testcity",
+                   "zipcode": "1834TEST",
+                   "CompanyUser": {
+                      "name": "User Example",
+                      "email": "user@testcompany.com",
+                      "password": "titapw"
+                     }
+                   }
+             Sample request to create an company with a logo:
+            
+                 POST /api/company
+                 {
+                   "name": "TestCompany",
+                   "description": "Insert very interesting description here",
+                   "LogoAsBase64": "iVBORw0KGgoAAAANSUhEUgAAAAUAAAAFCAYAAACNbyblAAAAE0lEQVR42mNkZPhfz4AGGGkgCADAFgeBun8CWgAAAABJRU5ErkJggg==",
+                   "street": "Teststreet 13",
+                   "city": "Testcity",
+                   "zipcode": "1834TEST",
+                   "CompanyUser": {
+                      "name": "User Example",
+                      "email": "user@testcompany.com",
+                      "password": "titapw"
+                     }
+                   }
+             </remarks>
+             <param name="req"></param>
+             <response code="200">Is returned when a company is successfully added.</response>
+             <response code="400">Is returned when the supplied company object is not valid. </response>
+             <response code="409">Is returned when the supplied company has a name that already exists. </response>
+        </member>
+        <member name="M:ComakershipsApi.CompanyController.CompanyDelete(Microsoft.AspNetCore.Http.HttpRequest,System.Int32,Microsoft.Azure.WebJobs.IAsyncCollector{Models.ViewModels.CompanyDeleteVM},System.Security.Claims.ClaimsPrincipal)">
+            <summary>
+            This method allows you to delete one company based on the ID given in path.
+            </summary>
+            <remarks>
+            
+            </remarks>
+            <param name="req"></param>
+            <param name="id"></param>
+            <param name="queue"></param>
+            <param name="user"></param>
+            <response code="200">Is returned when a company is successfully deleted.</response>
+            <response code="404">Is returned when two of the querystring parameters are supplied, or no valid ones.</response>
+        </member>
+        <member name="M:ComakershipsApi.CompanyController.CompanyDeleteQueueTriggerAsync(System.String)">
+            <summary>
+            This is the function that's responsible for handling the messages that are added to the Company Delete Queue.
+            </summary>
+            <param name="message"></param>
+        </member>
+        <member name="M:ComakershipsApi.CompanyController.CompanyPut(Microsoft.AspNetCore.Http.HttpRequest,System.Int32,Microsoft.Azure.WebJobs.IAsyncCollector{Models.ViewModels.CompanyPutVM},System.Security.Claims.ClaimsPrincipal)">
+             <summary>
+             This method allows you to update some fields or everything on an company object.
+             </summary>
+             <remarks>
+             Sample request to modify the name of an company:
+            
+                 POST /api/company/{id}
+                 {
+                   "name": "NewCompanyName"
+                  }
+                  
+             Sample request to modify the address of an company:
+            
+                 POST /api/company/{id}
+                 {
+                   "street": "Newstreet 25",
+                   "city": "Newcity",
+                   "zipcode": "1834NEW"
+                  }
+                  
+             Sample request to modify the description of an company:
+            
+                 POST /api/company/{id}
+                 {
+                   "description": "An edited description here. /n with newlines?"
+                  }
+             </remarks>
+             <param name="req"></param>
+             <param name="id"></param>
+             <param name="queue"></param>
+             <param name="user"></param>
+             <response code="200">Is returned when a valid company object is supplied and is successfully modified.</response>
+             <response code="400">Is returned when a non valid company object is supplied.</response>
+             <response code="404">Is returned when the company isn't found. </response>
+        </member>
+        <member name="M:ComakershipsApi.CompanyController.CompanyPutQueueTriggerAsync(System.String)">
+            <summary>
+            This is the function that's responsible for handling the messages that are added to the Company Put Queue.
+            </summary>
+            <param name="message"></param>
+        </member>
+        <member name="M:ComakershipsApi.CompanyController.AddCompanyUserToCompany(Microsoft.AspNetCore.Http.HttpRequest,System.Int32,System.Security.Claims.ClaimsPrincipal)">
+            <summary>
+            This method allows the admin of a company to add more companyusers to the company
+            </summary>
+            <param name="req"></param>
+            <param name="id"></param>
+            <param name="user"></param>
+            <returns></returns>
+        </member>
+        <member name="T:ComakershipsApi.DeliverableController">
+            <summary>
+            class definition for the DeliverableController. It contains endpoints related to Deliverables.
+            </summary>
+        </member>
+        <member name="M:ComakershipsApi.DeliverableController.#ctor(Microsoft.Extensions.Logging.ILogger{ComakershipsApi.DeliverableController},ServiceLayer.IDeliverableService,ServiceLayer.IComakershipService)">
+            <summary>
+            Constructor for the DeliverableController
+            </summary>
+        </member>
+        <member name="M:ComakershipsApi.DeliverableController.GetDeliverables(Microsoft.AspNetCore.Http.HttpRequest,System.Int32)">
+            <summary>
+            The method allows you to retreive all deliverables for a comakership
+            </summary>
+            <param name="req"></param>
+            <param name="comakershipId">Integer</param>
+            <returns></returns>
+        </member>
+        <member name="M:ComakershipsApi.DeliverableController.GetDeliverable(Microsoft.AspNetCore.Http.HttpRequest,System.Int32)">
+            <summary>
+            This method allows you to retreive a specific deliverable, by supplying the get method with an id
+            </summary>
+            <param name="req"></param>
+            <param name="id">Integer</param>
+            <returns></returns>
+        </member>
+        <member name="M:ComakershipsApi.DeliverableController.CreateDeliverable(Microsoft.AspNetCore.Http.HttpRequest,System.Int32)">
+            <summary>
+            The method allows you to add new deliverables by doing a post request
+            </summary>
+            <param name="req"></param>
+            <param name="comakershipId">Integer</param>
+            <returns></returns>
+        </member>
+        <member name="M:ComakershipsApi.DeliverableController.EditDeliverable(Microsoft.AspNetCore.Http.HttpRequest,System.Int32)">
+            <summary>
+            This method allows you to edit a deliverable entity
+            </summary>
+            <param name="req"></param>
+            <param name="id">Integer</param>
+            <returns></returns>
+        </member>
+        <member name="M:ComakershipsApi.DeliverableController.DeleteDeliverable(Microsoft.AspNetCore.Http.HttpRequest,System.Int32)">
+            <summary>
+            This method allows you to retreive a specific deliverable, by supplying the get method with an id
+            </summary>
+            <param name="req"></param>
+            <param name="id">Integer</param>
+            <returns></returns>
+        </member>
+        <member name="M:ComakershipsApi.DeliverableController.UploadDeliverable(System.Net.Http.HttpRequestMessage,System.Int32)">
+            <summary>
+            This method allows you to upload a file, by providing a multipart formdata
+            </summary>
+            <param name="req"></param>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ComakershipsApi.DeliverableController.GetListComakershipFiles(System.Net.Http.HttpRequestMessage,System.Security.Claims.ClaimsPrincipal,System.Int32)">
+            <summary>
+            This method allows you to retrieve a list of all uploaded files of a comakership
+            </summary>
+            <param name="req"></param>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ComakershipsApi.LoginController.Login(Microsoft.AspNetCore.Http.HttpRequest)">
+            <summary>
+            Generates a token for any supplied login
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ComakershipsApi.TeamController.GetTeams(Microsoft.AspNetCore.Http.HttpRequest)">
+            <summary>
+            The method allows you to retreive all teams
+            </summary>
+            <param name="req"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ComakershipsApi.TeamController.GetTeam(Microsoft.AspNetCore.Http.HttpRequest,System.Int32)">
+            <summary>
+            This method allows you to retreive a specific team, by supplying the get method with an id
+            </summary>
+            <param name="req"></param>
+            <param name="id">Integer</param>
+            <returns></returns>
+        </member>
+        <member name="M:ComakershipsApi.TeamController.GetTeamComplete(Microsoft.AspNetCore.Http.HttpRequest,System.Int32)">
+            <summary>
+            This method allows you to retreive a specific team, by supplying the get method with an id
+            </summary>
+            <param name="req"></param>
+            <param name="id">Integer</param>
+            <returns></returns>
+        </member>
+        <member name="M:ComakershipsApi.TeamController.CreateTeam(Microsoft.AspNetCore.Http.HttpRequest,System.Security.Claims.ClaimsPrincipal)">
+            <summary>
+            The method allows you to form a new team by doing a post request
+            </summary>
+            <param name="req"></param>
+            <param name="User">ClaimsPrincipal</param>
+            <returns></returns>
+        </member>
+        <member name="M:ComakershipsApi.TeamController.EditTeam(Microsoft.AspNetCore.Http.HttpRequest,System.Int32)">
+            <summary>
+            This method allows you to edit a Team entity
+            </summary>
+            <param name="req"></param>
+            <param name="id">Integer</param>
+            <returns></returns>
+        </member>
+        <member name="M:ComakershipsApi.TeamController.ApplyForComakership(Microsoft.AspNetCore.Http.HttpRequest,System.Security.Claims.ClaimsPrincipal,System.Int32,System.Int32)">
+            <summary>
+            allows a team to apply for a comakership
+            </summary>
+            <param name="req"></param>
+            <param name="teamid">Integer</param>
+            <param name="comakershipid">Integer</param>
+            <param name="User">ClaimsPrincipal</param>
+            <returns></returns>
+        </member>
+        <member name="M:ComakershipsApi.TeamController.CancelApplyForComakership(Microsoft.AspNetCore.Http.HttpRequest,System.Security.Claims.ClaimsPrincipal,System.Int32,System.Int32)">
+            <summary>
+            allows a team to cancel their application for a comakership
+            </summary>
+            <param name="req"></param>
+            <param name="teamid">Integer</param>
+            <param name="comakershipid">Integer</param>
+            <param name="User">ClaimsPrincipal</param>
+            <returns></returns>
+        </member>
+        <member name="M:ComakershipsApi.TeamController.JoinTeamRequest(Microsoft.AspNetCore.Http.HttpRequest,System.Security.Claims.ClaimsPrincipal,System.Int32)">
+            <summary>
+            allows a user to request to join the team
+            </summary>
+            <param name="req"></param>
+            <param name="User">ClaimsPrincipal</param>
+            <param name="teamid">Integer</param>
+            <returns></returns>
+        </member>
+        <member name="M:ComakershipsApi.TeamController.CancelJoinTeamRequest(Microsoft.AspNetCore.Http.HttpRequest,System.Security.Claims.ClaimsPrincipal,System.Int32)">
+            <summary>
+            allows a user to cancel their request to join the team
+            </summary>
+            <param name="req"></param>
+            <param name="User">ClaimsPrincipal</param>
+            <param name="teamid">Integer</param>
+            <returns></returns>
+        </member>
+        <member name="M:ComakershipsApi.TeamController.GetJoinRequests(Microsoft.AspNetCore.Http.HttpRequest,System.Int32,System.Security.Claims.ClaimsPrincipal)">
+            <summary>
+            Retrieves all of a teams joinrequests from students
+            </summary>
+            <param name="req"></param>
+            <param name="User">ClaimsPrincipal</param>
+            <param name="teamid">Integer</param>
+            <returns></returns>
+        </member>
+        <member name="M:ComakershipsApi.TeamController.GetSentJoinRequests(Microsoft.AspNetCore.Http.HttpRequest,System.Security.Claims.ClaimsPrincipal)">
+            <summary>
+            Retrieves all joinrequests for a student
+            </summary>
+            <param name="req"></param>
+            <param name="User"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ComakershipsApi.TeamController.AcceptJoinRequest(Microsoft.AspNetCore.Http.HttpRequest,System.Int32,System.Int32,System.Security.Claims.ClaimsPrincipal)">
+            <summary>
+            allows a team to accept a joinrequest from a student
+            </summary>
+            <param name="req"></param>
+            <param name="User">ClaimsPrincipal</param>
+            <param name="teamid">Integer</param>
+            <param name="studentid">Integer</param>
+            <returns></returns>
+        </member>
+        <member name="M:ComakershipsApi.TeamController.RejectJoinRequest(Microsoft.AspNetCore.Http.HttpRequest,System.Int32,System.Int32,System.Security.Claims.ClaimsPrincipal)">
+            <summary>
+            allows a team to reject a joinrequest from a student
+            </summary>
+            <param name="req"></param>
+            <param name="User">ClaimsPrincipal</param>
+            <param name="teamid">Integer</param>
+            <param name="studentid">Integer</param>
+            <returns></returns>
+        </member>
+        <member name="M:ComakershipsApi.TeamController.TeamInviteRequest(Microsoft.AspNetCore.Http.HttpRequest,System.Security.Claims.ClaimsPrincipal,System.Int32,System.String)">
+            <summary>
+            allows a team to request a student to join the team
+            </summary>
+            <param name="req"></param>
+            <param name="User">ClaimsPrincipal</param>
+            <param name="teamid">Integer</param>
+            <param name="email"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ComakershipsApi.TeamController.CancelTeamInviteRequest(Microsoft.AspNetCore.Http.HttpRequest,System.Security.Claims.ClaimsPrincipal,System.Int32,System.Int32)">
+            <summary>
+            allows a team to cancel their invite to join the team
+            </summary>
+            <param name="req"></param>
+            <param name="User">ClaimsPrincipal</param>
+            <param name="teamid">Integer</param>
+            <param name="studentid">Integer</param>
+            <returns></returns>
+        </member>
+        <member name="M:ComakershipsApi.TeamController.GetTeamInvites(Microsoft.AspNetCore.Http.HttpRequest,System.Security.Claims.ClaimsPrincipal)">
+            <summary>
+            allows a student to get all received teaminvites
+            </summary>
+            <param name="req"></param>
+            <param name="User">ClaimsPrincipal</param>
+            <returns></returns>
+        </member>
+        <member name="M:ComakershipsApi.TeamController.GetSentTeamInvites(Microsoft.AspNetCore.Http.HttpRequest,System.Int32,System.Security.Claims.ClaimsPrincipal)">
+            <summary>
+            allows a team to get all sent teaminvites
+            </summary>
+            <param name="req"></param>
+            <param name="User">ClaimsPrincipal</param>
+            <param name="teamid">Integer</param>
+            <returns></returns>
+        </member>
+        <member name="M:ComakershipsApi.TeamController.AcceptTeamInvite(Microsoft.AspNetCore.Http.HttpRequest,System.Int32,System.Security.Claims.ClaimsPrincipal)">
+            <summary>
+            allows a student to accept an invite from a team
+            </summary>
+            <param name="req"></param>
+            <param name="User">ClaimsPrincipal</param>
+            <param name="teamid">Integer</param>
+            <returns></returns>
+        </member>
+        <member name="M:ComakershipsApi.TeamController.RejectTeamInvite(Microsoft.AspNetCore.Http.HttpRequest,System.Int32,System.Security.Claims.ClaimsPrincipal)">
+            <summary>
+            allows a student to reject an invite from a team
+            </summary>
+            <param name="req"></param>
+            <param name="User">ClaimsPrincipal</param>
+            <param name="teamid">Integer</param>
+            <returns></returns>
+        </member>
+        <member name="M:ComakershipsApi.TeamController.GetTeamApplications(Microsoft.AspNetCore.Http.HttpRequest,System.Int32,System.Security.Claims.ClaimsPrincipal)">
+            <summary>
+            allows a team to get all comakership applications they made
+            </summary>
+            <param name="req"></param>
+            <param name="User">ClaimsPrincipal</param>
+            <param name="id">Integer</param>
+            <returns></returns>
+        </member>
+        <member name="M:ComakershipsApi.TeamController.LeaveTeam(Microsoft.AspNetCore.Http.HttpRequest,System.Security.Claims.ClaimsPrincipal,System.Int32)">
+            <summary>
+            allows a user to leave a team
+            </summary>
+            <param name="req"></param>
+            <param name="User">ClaimsPrincipal</param>
+            <param name="teamid">Integer</param>
+            <returns></returns>
+        </member>
+        <member name="M:ComakershipsApi.TeamController.KickTeamMember(Microsoft.AspNetCore.Http.HttpRequest,System.Security.Claims.ClaimsPrincipal,System.Int32,System.Int32)">
+            <summary>
+            allows a team member to kick another member
+            </summary>
+            <param name="req"></param>
+            <param name="User">ClaimsPrincipal</param>
+            <param name="teamid">Integer</param>
+            <param name="studentid">Integer</param>
+            <returns></returns>
+        </member>
+        <member name="T:ComakershipsApi.UniversityController">
+            <summary>
+            class definition for the UniversityController endpoint. It retrieves everything related to universities.
+            </summary>
+        </member>
+        <member name="M:ComakershipsApi.UniversityController.#ctor(Microsoft.Extensions.Logging.ILogger{ComakershipsApi.UniversityController},Service.IUniversityService,AutoMapper.IMapper)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="logger"></param>
+            <param name="universityService"></param>
+            <param name="mapper"></param>
+        </member>
+        <member name="M:ComakershipsApi.UniversityController.UniversitiesGet(Microsoft.AspNetCore.Http.HttpRequest)">
+            <summary>
+            This method allows you to retrieve all universities.
+            </summary>
+            <param name="req"></param>
+            <response code="200">Is returned when a university is successfully retrieved.</response>
+        </member>
+        <member name="M:ComakershipsApi.UniversityController.UniversitiesDomainsGet(Microsoft.AspNetCore.Http.HttpRequest)">
+            <summary>
+            This method allows you to retrieve all email domains of all universities.
+            </summary>
+            <param name="req"></param>
+            <response code="200">Is returned when the domains are succesfully retrieved.</response>
+        </member>
+        <member name="M:ComakershipsApi.UniversityController.UniversitiesDomainGetById(Microsoft.AspNetCore.Http.HttpRequest,System.Int32)">
+            <summary>
+            This method allows you to retrieve the domain used by the university.
+            </summary>
+            <param name="req"></param>
+            <param name="id"></param>
+            <returns></returns>
+            <response code="200">Is returned when the domain is succesfully retrieved.</response>
+            <response code="404">Is returned when the requested university doesn't exist.</response>
+        </member>
+        <member name="M:ComakershipsApi.UniversityController.UniversityGet(Microsoft.AspNetCore.Http.HttpRequest,System.Int32)">
+            <summary>
+            This method allows you to retrieve a single university based on it's ID.
+            </summary>
+            <param name="req"></param>
+            <param name="id"></param>
+            <response code="200">Is returned when a university is successfully retrieved.</response>
+            <response code="404">Is returned when the requested university doesn't exist.</response>
+        </member>
+        <member name="M:ComakershipsApi.UniversityController.UniversityPost(Microsoft.AspNetCore.Http.HttpRequest,Microsoft.Azure.WebJobs.IAsyncCollector{Models.ViewModels.UniversityPostVM})">
+             <summary>
+             This method allows you to add a new university to the Comakerships App.
+             </summary>
+             <remarks>
+             Sample request to create an university:
+            
+                 POST /api/University
+            		{
+            		 "id": 66,
+            		  "name": "Inholland",
+            		  "location": {
+            			"street": "Teststreet 13",
+            			"city": "Testcity",
+            			"zipcode": "1834TEST"
+            		  },
+            		  "registrationDate": "2020-09-20T14:05:08.5440000+02:00",
+            		  "domain":"student.inholland.nl"
+            		}
+             </remarks>
+             <param name="req"></param>
+             <param name="queue"></param>
+             <returns></returns>
+             <response code="200">Is returned when a university is successfully added.</response>
+             <response code="400">Is returned when the supplied university object is not valid.</response>
+             <response code="409">Is returned when the supplied university object already exists.</response>
+        </member>
+        <member name="M:ComakershipsApi.UniversityController.UniversityPostQueueTriggerAsync(System.String)">
+            <summary>
+            This is the function that's responsible for handling the messages that are added to the University Delete Queue.
+            </summary>
+            <param name="message"></param>
+        </member>
+        <member name="M:ComakershipsApi.UniversityController.UniversityDelete(Microsoft.AspNetCore.Http.HttpRequest,System.Int32,Microsoft.Azure.WebJobs.IAsyncCollector{Models.ViewModels.UniversityDeleteVM})">
+            <summary>
+            This method allows you to delete one university based on it's ID.
+            </summary>
+            <param name="req"></param>
+            <param name="id"></param>
+            <param name="queue"></param>
+            <response code="200">Is returned when a university is successfully deleted.</response>
+            <response code="202">Is returned when a request has been succesfully queued but not yet processed.</response>
+            <response code="404">Is returned when the university requested to be deleted isn't found.</response>
+        </member>
+        <member name="M:ComakershipsApi.UniversityController.UniversityDeleteQueueTriggerAsync(System.String)">
+            <summary>
+            This is the function that's responsible for handling the messages that are added to the University Delete Queue.
+            </summary>
+            <param name="message"></param>
+        </member>
+        <member name="M:ComakershipsApi.UniversityController.UniversityPut(Microsoft.AspNetCore.Http.HttpRequest,System.Nullable{System.Int32},Microsoft.Azure.WebJobs.IAsyncCollector{Models.ViewModels.UniversityPutVM})">
+             <summary>
+             This method allows you to update some fields or everything on an university object.
+             </summary>
+             <remarks>
+             Sample request to modify an university:
+            
+                 PUT /api/university/66
+            		{
+            		  "name": "InhollandModifiedName",
+            		  "city": "NewCity",
+            		}
+             </remarks>
+             <param name="req"></param>
+             <param name="queue"></param>
+             <param name="id"></param>
+             <response code="200">Is returned when a valid university object is supplied and is successfully modified.</response>
+             <response code="400">Is returned when a non valid university object is supplied.</response>
+        </member>
+        <member name="M:ComakershipsApi.UniversityController.UniversityPutQueueTriggerAsync(System.String)">
+            <summary>
+            This is the function that's responsible for handling the messages that are added to the University Put Queue.
+            </summary>
+            <param name="message"></param>
+        </member>
+        <member name="T:ComakershipsApi.UserController">
+            <summary>
+            class definition for the UserController endpoint. It retrieves everything related to users.
+            </summary>
+        </member>
+        <member name="M:ComakershipsApi.UserController.StudentGet(Microsoft.AspNetCore.Http.HttpRequest,System.Int32)">
+            <summary>
+            Retrieves a single student based on it's ID.
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ComakershipsApi.UserController.StudentPost(Microsoft.AspNetCore.Http.HttpRequest)">
+            <summary>
+            Saves a new student
+            </summary>
+            <param name="req"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ComakershipsApi.UserController.StudentPut(Microsoft.AspNetCore.Http.HttpRequest,System.Security.Claims.ClaimsPrincipal)">
+            <summary>
+            Edit a student
+            </summary>
+            <param name="req"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ComakershipsApi.UserController.CompanyUserGet(Microsoft.AspNetCore.Http.HttpRequest,System.Int32)">
+            <summary>
+            Retrieves a single companyuser based on it's ID.
+            </summary>
+            <param name="req"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ComakershipsApi.UserController.CompanyUserPost(Microsoft.AspNetCore.Http.HttpRequest)">
+            <summary>
+            Saves a new companyuser
+            </summary>
+            <param name="req"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ComakershipsApi.UserController.CompanyUserPut(Microsoft.AspNetCore.Http.HttpRequest,System.Security.Claims.ClaimsPrincipal)">
+            <summary>
+            Edit a companyuser
+            </summary>
+            <param name="req"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ComakershipsApi.UserController.StudentDelete(Microsoft.AspNetCore.Http.HttpRequest,System.Security.Claims.ClaimsPrincipal,System.Int32)">
+            <summary>
+            Deletes a single student based on it's ID.
+            </summary>
+            <param name="req"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ComakershipsApi.UserController.CompanyUserDelete(Microsoft.AspNetCore.Http.HttpRequest,System.Security.Claims.ClaimsPrincipal,System.Int32)">
+            <summary>
+            Deletes a single companyuser based on it's ID.
+            </summary>
+            <param name="req"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ComakershipsApi.UserController.ChangePassword(Microsoft.AspNetCore.Http.HttpRequest,System.Security.Claims.ClaimsPrincipal)">
+            <summary>
+            Changes the logged in users' password
+            </summary>
+            <param name="req"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ComakershipsApi.UserController.AddSkill(Microsoft.AspNetCore.Http.HttpRequest,System.Security.Claims.ClaimsPrincipal)">
+            <summary>
+            Add a new skill to the logged in student
+            </summary>
+            <param name="req"></param>
+            <param name="User"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ComakershipsApi.UserController.DeleteSkill(Microsoft.AspNetCore.Http.HttpRequest,System.Security.Claims.ClaimsPrincipal)">
+            <summary>
+            Delete a skill from logged in student
+            </summary>
+            <param name="req"></param>
+            <param name="User"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ComakershipsApi.UserController.EditSkill(Microsoft.AspNetCore.Http.HttpRequest,System.Security.Claims.ClaimsPrincipal)">
+            <summary>
+            Edit a skill from logged in student
+            </summary>
+            <param name="req"></param>
+            <param name="User"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Comakerships_Api.Filters.FileUploadOperation">
+            <summary>
+            Add extra parameters for uploading files in swagger.
+            </summary>
+        </member>
+        <member name="M:Comakerships_Api.Filters.FileUploadOperation.Apply(Microsoft.OpenApi.Models.OpenApiOperation,Swashbuckle.AspNetCore.SwaggerGen.OperationFilterContext)">
+            <summary>
+            Applies the specified operation.
+            </summary>
+            <param name="operation">The operation.</param>
+            <param name="context">The context.</param>
+        </member>
+        <member name="T:Comakerships_Api.Filters.FileUploadOperation.FileContentType">
+            <summary>
+            Indicates swashbuckle should consider the parameter as a file upload
+            </summary>
+        </member>
+        <member name="T:Comakerships_Api.Security.RestrictiveMultipartMemoryStreamProvider">
+            <summary>
+            Whitelist of allowed files for deliverable fileupload.
+            </summary>
+        </member>
+    </members>
+</doc>

@@ -1,0 +1,946 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Models</name>
+    </assembly>
+    <members>
+        <member name="P:Models.ComakershipSkill.ComakershipId">
+            <summary>
+            The ID of the Comakership
+            </summary>
+            <example>2</example>
+        </member>
+        <member name="P:Models.ComakershipSkill.SkillId">
+            <summary>
+            The ID of the skill
+            </summary>
+            <example>4</example>
+        </member>
+        <member name="P:Models.ComakershipStatus.Id">
+            <summary>
+            The ID the ComakershipStatus
+            </summary>
+            <example>1</example>
+        </member>
+        <member name="P:Models.ComakershipStatus.Name">
+            <summary>
+            The name of the status
+            </summary>
+            <example>Not started</example>
+        </member>
+        <member name="P:Models.ComakershipStatusGet.Id">
+            <summary>
+            The ID the ComakershipStatus
+            </summary>
+            <example>1</example>
+        </member>
+        <member name="P:Models.ComakershipStatusGet.Name">
+            <summary>
+            The name of the status
+            </summary>
+            <example>Not started</example>
+        </member>
+        <member name="P:Models.ComakershipStatusPost.Name">
+            <summary>
+            The name of the status
+            </summary>
+            <example>Not started</example>
+        </member>
+        <member name="P:Models.ComakershipStatusPut.Name">
+            <summary>
+            The name of the status
+            </summary>
+            <example>Not started</example>
+        </member>
+        <member name="P:Models.ComakershipBasic.Id">
+            <summary>
+            The ID of the Comakership
+            </summary>
+            <example>1</example>
+        </member>
+        <member name="P:Models.ComakershipBasic.Name">
+            <summary>
+            The name of the Comakership
+            </summary>
+            <example>An awesome Comakership</example>
+        </member>
+        <member name="P:Models.ComakershipBasic.Description">
+            <summary>
+            The description of the Comakership
+            </summary>
+            <example>We would like you to do some stuff</example>
+        </member>
+        <member name="P:Models.ComakershipBasic.CompanyName">
+            <summary>
+            The name of the company
+            </summary>
+            <example>Awesome Inc.</example>
+        </member>
+        <member name="P:Models.ComakershipBasic.CompanyCity">
+            <summary>
+            The city that the comapny is located at
+            </summary>
+            <example>Rotterdam</example>
+        </member>
+        <member name="P:Models.ComakershipBasic.Skills">
+            <summary>
+            The skills that are required for the Comakership
+            </summary>
+            <example>Java</example>
+        </member>
+        <member name="P:Models.ComakershipBasic.Credits">
+            <summary>
+            Is it possible to earn EC's?
+            </summary>
+            <example>False</example>
+        </member>
+        <member name="P:Models.ComakershipBasic.Bonus">
+            <summary>
+            Is there a bonus available on completion?
+            </summary>
+            <example>True</example>
+        </member>
+        <member name="P:Models.ComakershipBasic.CreatedAt">
+            <summary>
+            The date the Comakership was created
+            </summary>
+            <example>2020-10-10</example>
+        </member>
+        <member name="P:Models.ComakershipComplete.Id">
+            <summary>
+            The ID of the Comakership
+            </summary>
+            <example>1</example>
+        </member>
+        <member name="P:Models.ComakershipComplete.Name">
+            <summary>
+            The name of the Comakership
+            </summary>
+            <example>An awesome Comakership</example>
+        </member>
+        <member name="P:Models.ComakershipComplete.Description">
+            <summary>
+            The description of the Comakership
+            </summary>
+            <example>We would like you to do some stuff</example>
+        </member>
+        <member name="P:Models.ComakershipComplete.CompanyName">
+            <summary>
+            The name of the company
+            </summary>
+            <example>Awesome Inc.</example>
+        </member>
+        <member name="P:Models.ComakershipComplete.CompanyCity">
+            <summary>
+            The city that the comapny is located at
+            </summary>
+            <example>Rotterdam</example>
+        </member>
+        <member name="P:Models.ComakershipComplete.StatusName">
+            <summary>
+            The current status of the Comakership
+            </summary>
+            <example>Not started</example>
+        </member>
+        <member name="P:Models.ComakershipComplete.Credits">
+            <summary>
+            Is it possible to earn EC's?
+            </summary>
+            <example>False</example>
+        </member>
+        <member name="P:Models.ComakershipComplete.Bonus">
+            <summary>
+            Is there a bonus available on completion?
+            </summary>
+            <example>True</example>
+        </member>
+        <member name="P:Models.ComakershipComplete.CreatedAt">
+            <summary>
+            The date the Comakership was created
+            </summary>
+            <example>2020-10-10</example>
+        </member>
+        <member name="T:Models.ComakershipPost">
+            <summary>
+            This object contains all the data related to the ComakershipPostModel
+            </summary>
+        </member>
+        <member name="P:Models.ComakershipPost.Name">
+            <summary>
+            The name of the Comakership
+            </summary>
+            <example>An awesome Comakership</example>
+        </member>
+        <member name="P:Models.ComakershipPost.Description">
+            <summary>
+            The description of the Comakership
+            </summary>
+            <example>We would like you to do some stuff</example>
+        </member>
+        <member name="P:Models.ComakershipPost.Credits">
+            <summary>
+            Is it possible to earn EC's?
+            </summary>
+            <example>False</example>
+        </member>
+        <member name="P:Models.ComakershipPost.Bonus">
+            <summary>
+            Is there a bonus available on completion?
+            </summary>
+            <example>True</example>
+        </member>
+        <member name="P:Models.ComakershipPost.CompanyId">
+            <summary>
+            The ID of the company that sets up the Comakership
+            </summary>
+            <example>1</example>
+        </member>
+        <member name="P:Models.ComakershipPost.ToDos">
+            <summary>
+            The tasks that need to be done for the Comakership
+            </summary>
+            <example></example>
+        </member>
+        <member name="P:Models.ComakershipPost.Skills">
+            <summary>
+            The skills that are required for the Comakership
+            </summary>
+            <example>Java</example>
+        </member>
+        <member name="T:Models.ComakershipPut">
+            <summary>
+            This object contains all the data related to the ComakershipPutModel
+            </summary>
+        </member>
+        <member name="P:Models.ComakershipPut.Name">
+            <summary>
+            The name of the Comakership
+            </summary>
+            <example>An awesome Comakership</example>
+        </member>
+        <member name="P:Models.ComakershipPut.Description">
+            <summary>
+            The description of the Comakership
+            </summary>
+            <example>We would like you to do some stuff</example>
+        </member>
+        <member name="P:Models.ComakershipPut.Credits">
+            <summary>
+            Is it possible to earn EC's?
+            </summary>
+            <example>False</example>
+        </member>
+        <member name="P:Models.ComakershipPut.Bonus">
+            <summary>
+            Is there a bonus available on completion?
+            </summary>
+            <example>True</example>
+        </member>
+        <member name="P:Models.Skill.Id">
+            <summary>
+            The ID of the skill
+            </summary>
+            <example>1</example>
+        </member>
+        <member name="P:Models.Skill.Name">
+            <summary>
+            The name of the skill
+            </summary>
+            <example>C#</example>
+        </member>
+        <member name="P:Models.SkillGet.Name">
+            <summary>
+            The name of the skill
+            </summary>
+            <example>C#</example>
+        </member>
+        <member name="P:Models.SkillPost.Name">
+            <summary>
+            The name of the skill
+            </summary>
+            <example>C#</example>
+        </member>
+        <member name="P:Models.SkillPut.Name">
+            <summary>
+            The name of the skill
+            </summary>
+            <example>C#</example>
+        </member>
+        <member name="P:Models.StudentTeam.StudentUserId">
+            <summary>
+            The ID of the StudentUser
+            </summary>
+            <example>3</example>
+        </member>
+        <member name="P:Models.StudentTeam.TeamId">
+            <summary>
+            The ID of the Team
+            </summary>
+            <example>2</example>
+        </member>
+        <member name="P:Models.StudentTeamUpdate.StudentUserId">
+            <summary>
+            The ID of the StudentUser
+            </summary>
+            <example>3</example>
+        </member>
+        <member name="P:Models.StudentTeamUpdate.TeamId">
+            <summary>
+            The ID of the Team
+            </summary>
+            <example>2</example>
+        </member>
+        <member name="P:Models.Team.Id">
+            <summary>
+            The ID of the Team
+            </summary>
+            <example>2</example>
+        </member>
+        <member name="P:Models.Team.Name">
+            <summary>
+            The name of the Team
+            </summary>
+            <example>Team xXCloudMobileXx</example>
+        </member>
+        <member name="P:Models.Team.Description">
+            <summary>
+            The description of the Team
+            </summary>
+            <example>Hi we are Joey, Niek and Stefan.</example>
+        </member>
+        <member name="P:Models.TeamBasic.Id">
+            <summary>
+            The ID of the Team
+            </summary>
+            <example>2</example>
+        </member>
+        <member name="P:Models.TeamBasic.Name">
+            <summary>
+            The name of the Team
+            </summary>
+            <example>Team xXCloudMobileXx</example>
+        </member>
+        <member name="P:Models.TeamBasic.Description">
+            <summary>
+            The description of the Team
+            </summary>
+            <example>Hi we are Joey, Niek and Stefan.</example>
+        </member>
+        <member name="P:Models.TeamComplete.Id">
+            <summary>
+            The ID of the Team
+            </summary>
+            <example>2</example>
+        </member>
+        <member name="P:Models.TeamComplete.Name">
+            <summary>
+            The name of the Team
+            </summary>
+            <example>Team xXCloudMobileXx</example>
+        </member>
+        <member name="P:Models.TeamComplete.Description">
+            <summary>
+            The description of the Team
+            </summary>
+            <example>Hi we are Joey, Niek and Stefan.</example>
+        </member>
+        <member name="P:Models.TeamMember.Id">
+            <summary>
+            The ID of the TeamMember
+            </summary>
+            <example>2</example>
+        </member>
+        <member name="P:Models.TeamMember.Name">
+            <summary>
+            The name of the TeamMember
+            </summary>
+            <example>Bob</example>
+        </member>
+        <member name="P:Models.TeamMember.Email">
+            <summary>
+            The email of the TeamMember
+            </summary>
+            <example>bob@email.com</example>
+        </member>
+        <member name="T:Models.TeamPost">
+            <summary>
+            This object contains all the data related to the Team object
+            </summary>
+        </member>
+        <member name="P:Models.TeamPost.Name">
+            <summary>
+            The name of the Team
+            </summary>
+            <example>Team xXCloudMobileXx</example>
+        </member>
+        <member name="P:Models.TeamPost.Description">
+            <summary>
+            The description of the Team
+            </summary>
+            <example>Hi we are Joey, Niek and Stefan.</example>
+        </member>
+        <member name="T:Models.TeamPut">
+            <summary>
+            This object contains all the data related to the Team object
+            </summary>
+        </member>
+        <member name="P:Models.TeamPut.Name">
+            <summary>
+            The name of the Team
+            </summary>
+            <example>Team xXCloudMobileXx</example>
+        </member>
+        <member name="P:Models.TeamPut.Description">
+            <summary>
+            The description of the Team
+            </summary>
+            <example>Hi we are Joey, Niek and Stefan.</example>
+        </member>
+        <member name="P:Models.ToDo.Id">
+            <summary>
+            The ID of the ToDo
+            </summary>
+            <example>2</example>
+        </member>
+        <member name="P:Models.ToDo.ComakershipId">
+            <summary>
+            The ID of the Comakership that the ToDo belongs to
+            </summary>
+            <example>1</example>
+        </member>
+        <member name="P:Models.ToDo.Name">
+            <summary>
+            The name of the ToDo
+            </summary>
+            <example>Do some stuff</example>
+        </member>
+        <member name="P:Models.ToDo.Description">
+            <summary>
+            The description of the ToDo
+            </summary>
+            <example>The stuff that needs to be done is...</example>
+        </member>
+        <member name="P:Models.ToDo.Finished">
+            <summary>
+            If the ToDo is finished or not
+            </summary>
+            <example>false</example>
+        </member>
+        <member name="P:Models.ToDoGet.Name">
+            <summary>
+            The name of the ToDo
+            </summary>
+            <example>Do some stuff</example>
+        </member>
+        <member name="P:Models.ToDoGet.Description">
+            <summary>
+            The description of the ToDo
+            </summary>
+            <example>The stuff that needs to be done is...</example>
+        </member>
+        <member name="P:Models.ToDoGet.Finished">
+            <summary>
+            If the ToDo is finished or not
+            </summary>
+            <example>false</example>
+        </member>
+        <member name="P:Models.ToDoPost.Name">
+            <summary>
+            The name of the ToDo
+            </summary>
+            <example>Do some stuff</example>
+        </member>
+        <member name="P:Models.ToDoPost.Description">
+            <summary>
+            The description of the ToDo
+            </summary>
+            <example>The stuff that needs to be done is...</example>
+        </member>
+        <member name="P:Models.ToDoPut.Name">
+            <summary>
+            The name of the ToDo
+            </summary>
+            <example>Do some stuff</example>
+        </member>
+        <member name="P:Models.ToDoPut.Description">
+            <summary>
+            The description of the ToDo
+            </summary>
+            <example>The stuff that needs to be done is...</example>
+        </member>
+        <member name="T:DTO.Company">
+            <summary>
+            This object contains the various fields that together make up a "Company"
+            </summary>
+        </member>
+        <member name="P:DTO.Company.Id">
+            <summary>
+            Contains the id of the company.
+            </summary>
+            <example>1234</example>
+        </member>
+        <member name="P:DTO.Company.Name">
+            <summary>
+            Contains the name of the company.
+            </summary>
+            <example>TestCompany</example>
+        </member>
+        <member name="P:DTO.Company.Description">
+            <summary>
+            Contains the description of the company.
+            </summary>
+            <example>Insert very interesting description here</example>
+        </member>
+        <member name="P:DTO.Company.Comakerships">
+            <summary>
+            Contains the list of ID's of published comakerships by the company.
+            </summary>
+            <example>1,2</example>
+        </member>
+        <member name="P:DTO.Company.RegistrationDate">
+            <summary>
+            Contains the registrationdate of the company in the Comakerships App.
+            </summary>
+            <example>2020-09-20T13:05:08.544Z</example>
+        </member>
+        <member name="P:DTO.Company.Reviews">
+            <summary>
+            Contains the reviews given to the company by students previously participated in a comakership from the company.
+            </summary>
+            <example></example>
+        </member>
+        <member name="P:DTO.Company.Street">
+            <summary>
+            Contains the streetname the company is located at.
+            </summary>
+            <example>Teststreet 13</example>
+        </member>
+        <member name="P:DTO.Company.City">
+            <summary>
+            Contains the city the company is located in.
+            </summary>
+            <example>Testcity</example>
+        </member>
+        <member name="P:DTO.Company.Zipcode">
+            <summary>
+            Contains the zipcode of the company.
+            </summary>
+            <example>1834TEST</example>
+        </member>
+        <member name="T:DTO.ViewModels.CompanyDeleteVM">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:DTO.ViewModels.CompanyDeleteVM.#ctor(System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="id"></param>
+        </member>
+        <member name="P:DTO.ViewModels.CompanyDeleteVM.Id">
+            <summary>
+            Contains the id of the university.
+            </summary>
+            <example>66</example>
+        </member>
+        <member name="P:DTO.ViewModels.CompanyPostVM.Name">
+            <summary>
+            Contains the name of the company.
+            </summary>
+            <example>TestCompany</example>
+        </member>
+        <member name="P:DTO.ViewModels.CompanyPostVM.Description">
+            <summary>
+            Contains the description of the company.
+            </summary>
+            <example>Insert very interesting description here</example>
+        </member>
+        <member name="P:DTO.ViewModels.CompanyPostVM.Street">
+            <summary>
+            Contains the streetname the company is located at.
+            </summary>
+            <example>Teststreet 13</example>
+        </member>
+        <member name="P:DTO.ViewModels.CompanyPostVM.City">
+            <summary>
+            Contains the city the company is located in.
+            </summary>
+            <example>Testcity</example>
+        </member>
+        <member name="P:DTO.ViewModels.CompanyPostVM.Zipcode">
+            <summary>
+            Contains the zipcode of the company.
+            </summary>
+            <example>1834TEST</example>
+        </member>
+        <member name="T:DTO.ViewModels.CompanyPutVM">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:DTO.ViewModels.CompanyPutVM.Id">
+            <summary>
+            Contains the id of the university
+            </summary>
+        </member>
+        <member name="P:DTO.ViewModels.CompanyPutVM.Name">
+            <summary>
+            Contains the name of the company.
+            </summary>
+            <example>TestCompany</example>
+        </member>
+        <member name="P:DTO.ViewModels.CompanyPutVM.Description">
+            <summary>
+            Contains the description of the company.
+            </summary>
+            <example>Insert very interesting description here</example>
+        </member>
+        <member name="P:DTO.ViewModels.CompanyPutVM.Comakerships">
+            <summary>
+            Contains the list of ID's of published comakerships by the company.
+            </summary>
+            <example></example>
+        </member>
+        <member name="P:DTO.ViewModels.CompanyPutVM.Street">
+            <summary>
+            Contains the streetname the company is located at.
+            </summary>
+            <example>Teststreet 13</example>
+        </member>
+        <member name="P:DTO.ViewModels.CompanyPutVM.City">
+            <summary>
+            Contains the city the company is located in.
+            </summary>
+            <example>Testcity</example>
+        </member>
+        <member name="P:DTO.ViewModels.CompanyPutVM.Zipcode">
+            <summary>
+            Contains the zipcode of the company.
+            </summary>
+            <example>1834TEST</example>
+        </member>
+        <member name="T:DTO.ViewModels.UniversityDeleteVM">
+            <summary>
+            ViewModel for a DELETE request.
+            </summary>
+        </member>
+        <member name="M:DTO.ViewModels.UniversityDeleteVM.#ctor(System.Int32)">
+            <summary>
+            Ctor to create a new Delete ViewModel.
+            </summary>
+            <param name="id"></param>
+        </member>
+        <member name="P:DTO.ViewModels.UniversityDeleteVM.Id">
+            <summary>
+            Contains the id of the university.
+            </summary>
+            <example>66</example>
+        </member>
+        <member name="T:DTO.ViewModels.UniversityDomainVM">
+            <summary>
+            This is the viewmodel that is being returned when the universities/domains get queried.
+            </summary>
+        </member>
+        <member name="P:DTO.ViewModels.UniversityDomainVM.Id">
+            <summary>
+            Contains the id of the university.
+            </summary>
+            <example>66</example>
+        </member>
+        <member name="P:DTO.ViewModels.UniversityDomainVM.Name">
+            <summary>
+            Contains the name of the university.
+            </summary>
+            <example>Inholland</example>
+        </member>
+        <member name="P:DTO.ViewModels.UniversityDomainVM.Domain">
+            <summary>
+            Contains the domain of the university in the Comakerships App.
+            </summary>
+            <example>student.inholland.nl</example>
+        </member>
+        <member name="T:DTO.ViewModels.UniversityPostVM">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:DTO.ViewModels.UniversityPostVM.Name">
+            <summary>
+            Contains the name of the university.
+            </summary>
+            <example>Inholland</example>
+        </member>
+        <member name="P:DTO.ViewModels.UniversityPostVM.Domain">
+            <summary>
+            Contains the domain of the university in the Comakerships App.
+            </summary>
+            <example>@student.inholland.nl</example>
+        </member>
+        <member name="P:DTO.ViewModels.UniversityPostVM.RegistrationDate">
+            <summary>
+            Contains the registrationdate of the university in the Comakerships App.
+            </summary>
+            <example>2020-09-20T12:05:08.544Z</example>
+        </member>
+        <member name="P:DTO.ViewModels.UniversityPostVM.Street">
+            <summary>
+            Contains the streetname the university is located at.
+            </summary>
+            <example>Teststreet 13</example>
+        </member>
+        <member name="P:DTO.ViewModels.UniversityPostVM.City">
+            <summary>
+            Contains the city the university is located in.
+            </summary>
+            <example>Testcity</example>
+        </member>
+        <member name="P:DTO.ViewModels.UniversityPostVM.Zipcode">
+            <summary>
+            Contains the zipcode of the university.
+            </summary>
+            <example>1834TEST</example>
+        </member>
+        <member name="T:DTO.ViewModels.UniversityPutVM">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:DTO.ViewModels.UniversityPutVM.Id">
+            <summary>
+            Contains the id of the university
+            </summary>
+        </member>
+        <member name="P:DTO.ViewModels.UniversityPutVM.Name">
+            <summary>
+            Contains the name of the university.
+            </summary>
+            <example>Inholland</example>
+        </member>
+        <member name="P:DTO.ViewModels.UniversityPutVM.Street">
+            <summary>
+            Contains the streetname the university is located at.
+            </summary>
+            <example>Teststreet 13</example>
+        </member>
+        <member name="P:DTO.ViewModels.UniversityPutVM.City">
+            <summary>
+            Contains the city the university is located in.
+            </summary>
+            <example>Testcity</example>
+        </member>
+        <member name="P:DTO.ViewModels.UniversityPutVM.Zipcode">
+            <summary>
+            Contains the zipcode of the university.
+            </summary>
+            <example>1834TEST</example>
+        </member>
+        <member name="T:DTO.Rating">
+            <summary>
+            The rating class that represents the value of the review.
+            </summary>
+        </member>
+        <member name="P:DTO.Rating.Value">
+            <summary>
+            The value of rating.
+            </summary>
+            <example>7</example>
+        </member>
+        <member name="T:DTO.responseBody">
+            <summary>
+            Model for returning an JSON response.
+            </summary>
+        </member>
+        <member name="P:DTO.responseBody.StatusCode">
+            <summary>
+            Represents the statuscode of the response.
+            </summary>
+            <example>HttpStatusCode</example>
+        </member>
+        <member name="P:DTO.responseBody.Message">
+            <summary>
+            Represents the additional info on the response
+            </summary>
+            <example>Example message indicating what went wrong.</example>
+        </member>
+        <member name="T:DTO.Review">
+            <summary>
+            This class represents the Review part of a company.
+            </summary>
+        </member>
+        <member name="P:DTO.Review.Id">
+            <summary>
+            Contains the id of the review.
+            </summary>
+            <example>1</example>
+        </member>
+        <member name="P:DTO.Review.StudentUser">
+            <summary>
+            Contains the id of the StudentUser.
+            </summary>
+            <example>686885</example>
+        </member>
+        <member name="P:DTO.Review.Rating">
+            <summary>
+            Contains the rating of the review
+            </summary>
+            <example>8</example>
+        </member>
+        <member name="T:DTO.University">
+            <summary>
+            This object contains the various fields that together make up a "University"
+            </summary>
+        </member>
+        <member name="P:DTO.University.Id">
+            <summary>
+            Contains the id of the university.
+            </summary>
+            <example>66</example>
+        </member>
+        <member name="P:DTO.University.Name">
+            <summary>
+            Contains the name of the university.
+            </summary>
+            <example>Inholland</example>
+        </member>
+        <member name="P:DTO.University.RegistrationDate">
+            <summary>
+            Contains the registrationdate of the university in the Comakerships App.
+            </summary>
+            <example>2020-09-20T12:05:08.544Z</example>
+        </member>
+        <member name="P:DTO.University.Domain">
+            <summary>
+            Contains the domain of the university in the Comakerships App.
+            </summary>
+            <example>@student.inholland.nl</example>
+        </member>
+        <member name="P:DTO.University.Street">
+            <summary>
+            Contains the streetname the university is located at.
+            </summary>
+            <example>Teststreet 13</example>
+        </member>
+        <member name="P:DTO.University.City">
+            <summary>
+            Contains the city the university is located in.
+            </summary>
+            <example>Testcity</example>
+        </member>
+        <member name="P:DTO.University.Zipcode">
+            <summary>
+            Contains the zipcode of the university.
+            </summary>
+            <example>1834TEST</example>
+        </member>
+        <member name="T:DTO.CompanyUser">
+            <summary>
+            object derived from Userbody which makes a companyuser
+            </summary>
+        </member>
+        <member name="P:DTO.CompanyUser.Company">
+            <summary>
+            The company the companyuser is a part of
+            </summary>
+        </member>
+        <member name="P:DTO.CompanyUser.CompanyId">
+            <summary>
+            Contains the id for this user's company
+            </summary>
+        </member>
+        <member name="T:DTO.Login">
+            <summary>
+            The object for supplying login information
+            </summary>
+        </member>
+        <member name="P:DTO.Login.Email">
+            <summary>
+            The email for logging in
+            </summary>
+            <example>henk@inholland.nl</example>
+        </member>
+        <member name="P:DTO.Login.Password">
+            <summary>
+            The password for this user
+            </summary>
+            <example>MySecretPassword</example>
+        </member>
+        <member name="T:DTO.StudentUser">
+            <summary>
+            object derived from Userbody which makes a student
+            </summary>
+        </member>
+        <member name="P:DTO.StudentUser.StudentNumber">
+            <summary>
+            Contains the studentnumber of the student.
+            </summary>
+            <example>123456</example>
+        </member>
+        <member name="P:DTO.StudentUser.About">
+            <summary>
+            A description of the student
+            </summary>
+            <example>I am a very good student with experience in multiple programming languages.</example>
+        </member>
+        <member name="P:DTO.StudentUser.University">
+            <summary>
+            Contains the University of the student.
+            </summary>
+        </member>
+        <member name="P:DTO.StudentUser.UniversityId">
+            <summary>
+            Contains the Id of this students university
+            </summary>
+        </member>
+        <member name="P:DTO.StudentUser.FavouritedComakerships">
+            <summary>
+            A list of favourite comakerships
+            </summary>
+        </member>
+        <member name="P:DTO.StudentUser.Links">
+            <summary>
+            A list of various links of the student, for example social media or github accounts
+            </summary>
+        </member>
+        <member name="P:DTO.StudentUser.Skills">
+            <summary>
+            list of skills of the student, for example programming languages, spoken languages etc.
+            </summary>
+        </member>
+        <member name="T:DTO.UserBody">
+            <summary>
+            Base abstract object that makes up a user
+            </summary>
+        </member>
+        <member name="P:DTO.UserBody.Id">
+            <summary>
+            Contains the id of the user.
+            </summary>
+            <example>1</example>
+        </member>
+        <member name="P:DTO.UserBody.Name">
+            <summary>
+            Contains the name of the user.
+            </summary>
+            <example>henk</example>
+        </member>
+        <member name="P:DTO.UserBody.Email">
+            <summary>
+            Contains the email of the user.
+            </summary>
+            <example>henk@inholland.nl</example>
+        </member>
+        <member name="P:DTO.UserBody.Password">
+            <summary>
+            Contains the encrypted password of the user.
+            </summary>
+            <example>regkjuheswgiew23423547ew!!"^%ygyfu</example>
+        </member>
+        <member name="P:DTO.UserBody.Deleted">
+            <summary>
+            If the user is deleted or not, default=false
+            </summary>
+            <example>false</example>
+        </member>
+    </members>
+</doc>

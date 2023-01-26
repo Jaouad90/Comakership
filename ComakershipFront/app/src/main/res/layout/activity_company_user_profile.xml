@@ -1,0 +1,405 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/profile_constraintlayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF"
+    tools:context=".company.profile.CompanyUserProfileActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar2"
+        android:layout_width="0dp"
+        android:layout_height="75dp"
+        android:background="@drawable/ic_toolbar_background"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/toolbar_back_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/outline_arrow_back"
+            android:clickable="true"
+            android:layout_gravity="left"
+            android:layout_marginLeft="10dp"/>
+
+        <ImageView
+            android:id="@+id/admin_image"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/outline_diamond"
+            android:clickable="true"
+            android:visibility="gone"
+            android:layout_gravity="right"
+            android:layout_marginRight="10dp"/>
+
+        <ImageView
+            android:id="@+id/join_team_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:layout_marginRight="10dp"
+            android:background="@drawable/outline_edit"
+            android:clickable="true"
+            tools:layout_editor_absoluteX="344dp"
+            tools:layout_editor_absoluteY="26dp" />
+
+        <TextView
+            android:id="@+id/toolbar_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="User Profile"
+            android:textColor="#FFFFFF"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            tools:layout_editor_absoluteX="180dp"
+            tools:layout_editor_absoluteY="18dp" />
+    </androidx.appcompat.widget.Toolbar>
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/profile_scrollview"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/bottom_navigation"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar2">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/profile_constrain_scroll"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <Button
+                android:id="@+id/company_user_profile_save_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="60dp"
+                android:layout_marginTop="64dp"
+                android:background="@drawable/custom_login_signin_btn"
+                android:ems="22"
+                android:enabled="false"
+                android:text="Update Profile"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                android:visibility="gone"
+                app:backgroundTint="@null"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/company_newuser_admin_checkbox" />
+
+            <EditText
+                android:id="@+id/company_user_id_edittext"
+                android:layout_width="0dp"
+                android:layout_height="50dp"
+                android:layout_marginEnd="24dp"
+                android:layout_marginRight="24dp"
+                android:textCursorDrawable="@drawable/custom_textinputet_text_highlight"
+                android:enabled="false"
+                android:textSize="14sp"
+                android:visibility="gone"
+                app:layout_constraintBottom_toTopOf="@+id/company_user_name_txtview"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/company_user_id_txtview_value"
+                app:layout_constraintTop_toBottomOf="@+id/company_user_id_txtview_value" />
+
+            <EditText
+                android:id="@+id/company_user_name_edittext"
+                android:layout_width="0dp"
+                android:layout_height="50dp"
+                android:layout_marginEnd="24dp"
+                android:layout_marginRight="24dp"
+                android:textCursorDrawable="@drawable/custom_textinputet_text_highlight"
+                android:enabled="false"
+                android:inputType="text"
+                android:textSize="14sp"
+                android:visibility="gone"
+                app:layout_constraintBottom_toTopOf="@+id/company_user_email_txtview"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/company_user_name_txtview_value"
+                app:layout_constraintTop_toBottomOf="@+id/company_user_name_txtview_value" />
+
+            <EditText
+                android:id="@+id/company_user_email_edittext"
+                android:layout_width="0dp"
+                android:layout_height="50dp"
+                android:layout_marginEnd="24dp"
+                android:layout_marginRight="24dp"
+                android:textCursorDrawable="@drawable/custom_textinputet_text_highlight"
+                android:enabled="false"
+                android:textSize="14sp"
+                android:inputType="textEmailAddress"
+                android:visibility="gone"
+                app:layout_constraintBottom_toTopOf="@+id/company_user_password_txtview"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/company_user_email_txtview_value"
+                app:layout_constraintTop_toBottomOf="@+id/company_user_email_txtview_value" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/company_user_oldpassword_txtinputlayout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="24dp"
+                android:layout_marginRight="24dp"
+                app:boxStrokeColor="@color/primary_green"
+                app:boxStrokeWidth="0dp"
+                app:boxStrokeWidthFocused="0dp"
+                app:endIconTint="@color/primary_green"
+                app:errorEnabled="true"
+                app:hintTextColor="@color/primary_green"
+                android:visibility="gone"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/company_user_password_txtview"
+                app:layout_constraintTop_toBottomOf="@+id/company_user_email_edittext" >
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/company_user_oldpassword_edittext"
+                    android:layout_width="200dp"
+                    android:layout_height="50dp"
+                    android:textCursorDrawable="@drawable/custom_textinputet_text_highlight"
+                    android:hint="OLD PASSWORD"
+                    android:inputType="textPassword"
+                    android:textSize="14sp" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/company_user_password_txtinputlayout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="24dp"
+                android:layout_marginRight="24dp"
+                app:boxStrokeColor="@color/primary_green"
+                app:boxStrokeWidth="0dp"
+                app:boxStrokeWidthFocused="0dp"
+                app:endIconTint="@color/primary_green"
+                app:errorEnabled="true"
+                app:hintTextColor="@color/primary_green"
+                android:visibility="gone"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/company_user_password_txtview"
+                app:layout_constraintTop_toBottomOf="@+id/company_user_oldpassword_txtinputlayout" >
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/company_user_password_edittext"
+                    android:layout_width="200dp"
+                    android:layout_height="50dp"
+                    android:textCursorDrawable="@drawable/custom_textinputet_text_highlight"
+                    android:hint="NEW PASSWORD"
+                    android:inputType="textPassword"
+                    android:textSize="14sp" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/company_user_repeat_password_textinputlayout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="24dp"
+                android:layout_marginRight="24dp"
+                app:boxStrokeColor="@color/primary_green"
+                app:boxStrokeWidth="0dp"
+                app:boxStrokeWidthFocused="0dp"
+                app:endIconTint="@color/primary_green"
+                app:errorEnabled="true"
+                app:hintTextColor="@color/primary_green"
+                android:visibility="gone"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/company_user_password_txtview"
+                app:layout_constraintTop_toBottomOf="@+id/company_user_password_txtinputlayout" >
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/company_user_repeat_password_edittext"
+                    android:layout_width="200dp"
+                    android:layout_height="50dp"
+                    android:textCursorDrawable="@drawable/custom_textinputet_text_highlight"
+                    android:hint="REPEAT NEW PASSWORD"
+                    android:inputType="textPassword"
+                    android:textSize="14sp" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/company_newuser_email_txtinputlayout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="24dp"
+                android:layout_marginRight="24dp"
+                app:boxStrokeColor="@color/primary_green"
+                app:boxStrokeWidth="0dp"
+                app:boxStrokeWidthFocused="0dp"
+                app:endIconTint="@color/primary_green"
+                app:errorEnabled="true"
+                app:hintTextColor="@color/primary_green"
+                android:visibility="gone"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/company_user_add_txtview"
+                app:layout_constraintTop_toBottomOf="@+id/company_user_profile_password_change_btn">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/company_newuser_email_edittext"
+                    android:layout_width="200dp"
+                    android:layout_height="50dp"
+                    android:textCursorDrawable="@drawable/custom_textinputet_text_highlight"
+                    android:hint="EMAIL ADDRESS"
+                    android:inputType="textEmailAddress"
+                    android:textSize="14sp" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <CheckBox
+                android:id="@+id/company_newuser_admin_checkbox"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/company_user_add_txtview"
+                app:layout_constraintTop_toBottomOf="@+id/company_newuser_email_txtinputlayout" />
+
+            <TextView
+                android:id="@+id/company_user_id_txtview"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="24dp"
+                android:text="User ID : "
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/profile_constrain_scroll" />
+
+            <TextView
+                android:id="@+id/company_user_id_txtview_value"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="90dp"
+                android:layout_marginLeft="90dp"
+                android:layout_marginTop="24dp"
+                android:text=""
+                app:layout_constraintStart_toEndOf="@+id/company_user_id_txtview"
+                app:layout_constraintTop_toTopOf="@+id/profile_constrain_scroll" />
+
+            <TextView
+                android:id="@+id/company_user_name_txtview"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginLeft="8dp"
+                android:text="Username : "
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/company_user_id_edittext" />
+
+            <TextView
+                android:id="@+id/company_user_name_txtview_value"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="68dp"
+                android:layout_marginLeft="68dp"
+                android:text=""
+                app:layout_constraintStart_toEndOf="@+id/company_user_name_txtview"
+                app:layout_constraintTop_toBottomOf="@+id/company_user_id_edittext" />
+
+            <TextView
+                android:id="@+id/company_user_email_txtview"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginLeft="8dp"
+                android:text="Email Address : "
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/company_user_name_edittext" />
+
+            <TextView
+                android:id="@+id/company_user_email_txtview_value"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="38dp"
+                android:layout_marginLeft="38dp"
+                app:layout_constraintStart_toEndOf="@+id/company_user_email_txtview"
+                app:layout_constraintTop_toBottomOf="@+id/company_user_name_edittext" />
+
+            <TextView
+                android:id="@+id/company_user_password_txtview"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="8dp"
+                android:text="Change password : "
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/company_user_email_edittext" />
+
+            <Button
+                android:id="@+id/company_user_profile_password_change_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:background="@drawable/custom_login_signin_btn"
+                android:enabled="false"
+                android:text="Change password"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                app:backgroundTint="@null"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/company_user_password_txtview"
+                app:layout_constraintTop_toBottomOf="@+id/company_user_email_edittext" />
+
+            <TextView
+                android:id="@+id/company_user_add_txtview"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="28dp"
+                android:text="Create new user : "
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/company_user_password_txtview" />
+
+            <Button
+                android:id="@+id/company_user_add_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:layout_marginTop="50dp"
+                android:background="@drawable/custom_login_signin_btn"
+                android:enabled="false"
+                android:text="Add User"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                app:backgroundTint="@null"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/company_user_add_txtview"
+                app:layout_constraintTop_toBottomOf="@+id/company_user_repeat_password_textinputlayout" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottom_navigation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:background="#E8E6E6"
+        app:itemIconSize="20dp"
+        app:itemIconTint="@menu/nav_menu_selector"
+        app:itemTextColor="@menu/nav_menu_selector"
+        app:labelVisibilityMode="labeled"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:menu="@menu/nav_menu_company" />
+</androidx.constraintlayout.widget.ConstraintLayout>

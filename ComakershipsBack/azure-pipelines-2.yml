@@ -1,0 +1,123 @@
+# .NET Core Function App to Windows on Azure
+# Build a .NET Core function app and deploy it to Azure as a Windows function App.
+# Add steps that analyze code, save build artifacts, deploy, and more:
+# https://docs.microsoft.com/en-us/azure/devops/pipelines/languages/dotnet-core
+
+trigger:
+- master
+
+variables:
+  # Azure Resource Manager connection created during pipeline creation
+  azureSubscription: '8af516f6-01db-4108-a6bc-60fe95fe3a09'
+
+  # Function app name
+  functionAppName: 'comakershipsapipentest'
+
+  # Agent VM image name
+  vmImageName: 'vs2017-win2016'
+
+  integrationTestDirectory: '$(System.DefaultWorkingDirectory)/Comakerships_tests'
+  
+  # TODO: get the functionHostName from the ARM template
+  functionHostName: 'https://comakershipsapipentest.azurewebsites.net/'
+
+  # Working Directory
+  workingDirectory: '$(System.DefaultWorkingDirectory)/Comakerships_api'
+
+stages:
+- stage: Build
+  displayName: Build stage
+
+  jobs:
+  - job: Build
+    displayName: Build
+    pool:
+      vmImage: $(vmImageName)
+
+    steps:
+    - task: DotNetCoreCLI@2
+      displayName: Build
+      inputs:
+        command: 'build'
+        projects: |
+          $(workingDirectory)/*.csproj
+        arguments: --output $(System.DefaultWorkingDirectory)/publish_output --configuration Release
+
+    - task: ArchiveFiles@2
+      displayName: 'Archive files'
+      inputs:
+        rootFolderOrFile: '$(System.DefaultWorkingDirectory)/publish_output'
+        includeRootFolder: false
+        archiveType: zip
+        archiveFile: $(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip
+        replaceExistingArchive: true
+    - task: AzureResourceManagerTemplateDeployment@3
+      displayName: 'App deployment'
+      inputs:
+        deploymentScope: 'Resource Group'
+        azureResourceManagerConnection: 'Azure for Students (6b285b99-cefc-4012-ae67-1ad54af31db5)'
+        subscriptionId: '6b285b99-cefc-4012-ae67-1ad54af31db5'
+        action: 'Create Or Update Resource Group'
+        resourceGroupName: 'comakershipsgrouppentest'
+        location: 'West Europe'
+        templateLocation: 'Linked artifact'
+        csmFile: '$(System.DefaultWorkingDirectory)/Comakerships_api/template-azure-function.json'
+        csmParametersFile: '$(System.DefaultWorkingDirectory)/Comakerships_api/template-azure-function.parameters.json'
+        overrideParameters: '-DBPassword $(dbpassword) -CloudStorageAccountKey $(cloudstorageaccountkey) -appService_name "comakershipsapipentest" -resourceGroup "comakershipsgrouppentest" -storageaccount_name "comakershipspenteststore" -DatabaseServerName "comakershipsdbpentest"'
+        deploymentMode: 'Incremental'
+    - task: AzureResourceManagerTemplateDeployment@3
+      displayName: 'SQL DB deployment'    
+      inputs:
+        deploymentScope: 'Resource Group'
+        azureResourceManagerConnection: 'Azure for Students (6b285b99-cefc-4012-ae67-1ad54af31db5)'
+        subscriptionId: '6b285b99-cefc-4012-ae67-1ad54af31db5'
+        action: 'Create Or Update Resource Group'
+        resourceGroupName: 'comakershipsgrouppentest'
+        location: 'West Europe'
+        templateLocation: 'Linked artifact'
+        csmFile: '$(System.DefaultWorkingDirectory)/Comakerships_api/template-sqldb.json'
+        csmParametersFile: '$(System.DefaultWorkingDirectory)/Comakerships_api/template-sqldb.parameters.json'
+        overrideParameters: '-sqlAdministratorLoginPassword $(dbpassword) -sqlServerName "comakershipsdbpentest"'
+        deploymentMode: 'Incremental'
+
+    - publish: $(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip
+      artifact: drop
+- stage: Deploy
+  displayName: Deploy stage
+  dependsOn: Build
+  condition: succeeded()
+
+  jobs:
+  - deployment: Deploy
+    displayName: Deploy
+    environment: 'development'
+    pool:
+      vmImage: $(vmImageName)
+
+    strategy:
+      runOnce:
+        deploy:
+
+          steps:
+          - task: AzureFunctionApp@1
+            displayName: 'Azure functions app deploy'
+            inputs:
+              azureSubscription: '$(azureSubscription)'
+              appType: functionApp
+              appName: $(functionAppName)
+              package: '$(Pipeline.Workspace)/drop/$(Build.BuildId).zip'
+- stage: Test
+  displayName: Tests
+  dependsOn: Deploy
+  condition: succeeded()
+  jobs:
+    - job: Test
+      displayName: Unit Tests
+      pool:
+        vmImage: $(vmImageName)
+      steps:
+        - task: DotNetCoreCLI@2
+          displayName: Run unit tests
+          inputs:
+            command: test
+            projects: '**/NUnitTest*/*.csproj'

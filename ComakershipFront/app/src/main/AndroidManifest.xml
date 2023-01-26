@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="nl.kaouch.jaouad.comakership">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission
+        android:name="android.permission.AUTHENTICATE_ACCOUNTS"
+        android:maxSdkVersion="22" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_logo"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_logo_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.MaterialComponents.Light.NoActionBar"
+        android:windowSoftInputMode="adjustResize">
+        <activity android:name=".company.comakerships.CompanyComakershipDeliverableAlertDialogActivity"></activity>
+        <activity android:name=".student.comakership.StudentComakershipDeliverableAlertDialogActivity" />
+        <activity android:name=".student.comakership.ComakershipDashboardActivity" />
+        <activity android:name=".student.comakership.StudentComakershipActivity" />
+        <activity android:name=".company.inbox.InboxApplicationActivity" />
+        <activity android:name=".company.inbox.CompanyInboxDashboardActivity" />
+        <activity android:name=".student.comakership.SearchComakershipAlertDialogActivity" />
+        <activity
+            android:name=".student.comakership.SearchComakershipActivity"
+            android:windowSoftInputMode="adjustPan" />
+        <activity android:name=".student.inbox.InboxActivity" />
+        <activity android:name=".student.team.AllTeamsActivity" />
+        <activity android:name=".student.team.SpecificTeamActivity" />
+        <activity
+            android:name=".student.team.CreateTeamActivity"
+            android:parentActivityName=".student.team.TeamDashboardActivity" />
+        <activity android:name=".student.team.TeamDashboardActivity" />
+        <activity android:name=".student.profile.StudentProfileActivity" />
+        <activity android:name=".company.profile.CompanyUserProfileActivity" />
+        <activity
+            android:name=".company.profile.CompanyProfileDashboardActivity"
+            android:windowSoftInputMode="adjustPan" />
+        <activity android:name=".company.comakerships.CompanyComakershipActivity" />
+        <activity
+            android:name=".company.comakerships.CreateComakershipDeliverablesActivity"
+            android:windowSoftInputMode="adjustPan" />
+        <activity android:name=".company.comakerships.CompanyComakershipDashboardActivity" />
+        <activity android:name=".company.comakerships.CreateComakershipSubmitActivity" />
+        <activity android:name=".company.comakerships.CreateComakershipActivity" />
+        <activity android:name=".student.dashboard.StudentDashboardActivity" />
+        <activity android:name=".company.dashboard.CompanyDashboardActivity" />
+        <activity android:name=".register.company.RegisterCompanyPrimaryUserActivity" />
+        <activity android:name=".login.LoginActivity" />
+        <activity android:name=".register.company.RegisterCompanyActivity" />
+        <activity android:name=".register.student.RegisterStudentActivity" />
+        <activity
+            android:name=".MainActivity"
+            android:label="@string/main_activity_title">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>

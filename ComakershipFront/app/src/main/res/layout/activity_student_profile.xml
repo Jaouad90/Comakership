@@ -1,0 +1,346 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".student.profile.StudentProfileActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar2"
+        android:layout_width="0dp"
+        android:layout_height="75dp"
+        android:background="@drawable/ic_toolbar_background"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/join_team_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:layout_marginRight="10dp"
+            android:background="@drawable/outline_edit"
+            android:clickable="true"
+            tools:layout_editor_absoluteX="344dp"
+            tools:layout_editor_absoluteY="26dp" />
+
+        <TextView
+            android:id="@+id/toolbar_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="Student Profile"
+            android:textColor="#FFFFFF"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            tools:layout_editor_absoluteX="180dp"
+            tools:layout_editor_absoluteY="18dp" />
+
+        <ImageView
+            android:id="@+id/logout_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/outline_logout"
+            android:clickable="true"
+            android:layout_gravity="right"
+            android:layout_marginRight="10dp"/>
+
+    </androidx.appcompat.widget.Toolbar>
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/student_profile_scrollview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="150dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar2">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/contraint_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/add_link_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@null"
+                android:enabled="false"
+                android:src="@drawable/task_alt"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="@+id/student_links_txtinputlayout"
+                app:layout_constraintStart_toEndOf="@+id/student_links_txtinputlayout"
+                app:layout_constraintTop_toTopOf="@+id/student_links_txtinputlayout" />
+
+            <TextView
+                android:id="@+id/student_nickname_txtview"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="65dp"
+                android:text="Nickname : "
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/student_name_txtview" />
+
+            <TextView
+                android:id="@+id/student_about_txtview"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="65dp"
+                android:text="About : "
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/student_nickname_txtview" />
+
+            <TextView
+                android:id="@+id/student_name_txtview"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="24dp"
+                android:text="Full Name : "
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/contraint_layout" />
+
+            <TextView
+                android:id="@+id/student_Links_txtview"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="65dp"
+                android:text="Links : "
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/student_about_txtview" />
+
+            <TextView
+                android:id="@+id/student_nickname_value"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="65dp"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toEndOf="@+id/student_nickname_txtview"
+                app:layout_constraintTop_toBottomOf="@+id/student_name_value" />
+
+            <TextView
+                android:id="@+id/student_about_value"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="36dp"
+                android:layout_marginLeft="36dp"
+                android:layout_marginTop="65dp"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toEndOf="@+id/student_about_txtview"
+                app:layout_constraintTop_toBottomOf="@+id/student_nickname_value" />
+
+            <TextView
+                android:id="@+id/student_name_value"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="24dp"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toEndOf="@+id/student_name_txtview"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/student_links_txtinputlayout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="60dp"
+                android:layout_marginLeft="60dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="24dp"
+                android:layout_marginRight="24dp"
+                android:minWidth="32dp"
+                android:visibility="gone"
+                app:boxStrokeColor="@color/primary_green"
+                app:boxStrokeWidth="0dp"
+                app:boxStrokeWidthFocused="0dp"
+                app:endIconTint="@color/primary_green"
+                app:errorEnabled="true"
+                app:hintTextColor="@color/primary_green"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/student_Links_txtview"
+                app:layout_constraintTop_toBottomOf="@+id/student_about_txtinputlayout"
+                app:layout_constraintWidth_min="32dp">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/student_links_edittext"
+                    android:layout_width="200dp"
+                    android:layout_height="50dp"
+                    android:hint="Ex: 'www.google.nl'"
+                    android:inputType="textUri"
+                    android:isScrollContainer="false"
+                    android:maxLines="1"
+                    android:overScrollMode="never"
+                    android:textCursorDrawable="@drawable/custom_textinputet_text_highlight" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/student_name_txtinputlayout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:visibility="gone"
+                app:boxStrokeColor="@color/primary_green"
+                app:boxStrokeWidth="0dp"
+                app:boxStrokeWidthFocused="0dp"
+                app:endIconTint="@color/primary_green"
+                app:errorEnabled="true"
+                app:hintTextColor="@color/primary_green"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/student_name_txtview"
+                app:layout_constraintTop_toTopOf="@+id/contraint_layout">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/student_name_edittext"
+                    android:layout_width="200dp"
+                    android:layout_height="50dp"
+                    android:hint="John Doe"
+                    android:inputType="text"
+                    android:textCursorDrawable="@drawable/custom_textinputet_text_highlight"
+                    android:textSize="14sp" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/student_about_txtinputlayout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="30dp"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="10dp"
+                android:visibility="gone"
+                app:boxStrokeColor="@color/primary_green"
+                app:boxStrokeWidth="0dp"
+                app:boxStrokeWidthFocused="0dp"
+                app:endIconTint="@color/primary_green"
+                app:errorEnabled="true"
+                app:hintTextColor="@color/primary_green"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/student_about_txtview"
+                app:layout_constraintTop_toBottomOf="@+id/student_nickname_txtinputlayout">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/student_about_edittext"
+                    android:layout_width="200dp"
+                    android:layout_height="wrap_content"
+                    android:hint="ABOUT..."
+                    android:inputType="textMultiLine"
+                    android:textCursorDrawable="@drawable/custom_textinputet_text_highlight"
+                    android:textSize="14sp" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/student_nickname_txtinputlayout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:visibility="gone"
+                app:boxStrokeColor="@color/primary_green"
+                app:boxStrokeWidth="0dp"
+                app:boxStrokeWidthFocused="0dp"
+                app:endIconTint="@color/primary_green"
+                app:errorEnabled="true"
+                app:hintTextColor="@color/primary_green"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/student_nickname_txtview"
+                app:layout_constraintTop_toBottomOf="@+id/student_name_txtinputlayout">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/student_nickname_edittext"
+                    android:layout_width="200dp"
+                    android:layout_height="50dp"
+                    android:hint="JOHNNY"
+                    android:inputType="text"
+                    android:textCursorDrawable="@drawable/custom_textinputet_text_highlight"
+                    android:textSize="14sp" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <LinearLayout
+                android:id="@+id/container"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="40dp"
+                android:orientation="vertical"
+                android:visibility="visible"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/student_Links_txtview">
+            </LinearLayout>
+
+            <Space
+                android:id="@+id/spacer"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_marginTop="8dp"
+                android:layout_weight="1"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/container" />
+
+            <Button
+                android:id="@+id/student_profile_save_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="60dp"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/custom_login_signin_btn"
+                android:ems="22"
+                android:enabled="false"
+                android:text="Update Profile"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                android:visibility="visible"
+                app:backgroundTint="@null"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/spacer" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottom_navigation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:background="#E8E6E6"
+        app:itemIconSize="20dp"
+        app:itemIconTint="@menu/nav_menu_selector"
+        app:itemTextColor="@menu/nav_menu_selector"
+        app:labelVisibilityMode="labeled"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:menu="@menu/nav_menu" />
+</androidx.constraintlayout.widget.ConstraintLayout>

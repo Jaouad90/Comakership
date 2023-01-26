@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".company.comakerships.CreateComakershipDeliverablesActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar2"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/ic_toolbar_background"
+        app:layout_constraintBottom_toTopOf="@+id/scroll_deliverable"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/toolbar_back_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left"
+            android:layout_marginLeft="10dp"
+            android:background="@drawable/outline_arrow_back"
+            android:clickable="true" />
+
+        <TextView
+            android:id="@+id/toolbar_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="@string/create_comakership_activity_title"
+            android:textColor="#FFFFFF"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            tools:layout_editor_absoluteX="180dp"
+            tools:layout_editor_absoluteY="18dp" />
+    </androidx.appcompat.widget.Toolbar>
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/scroll_deliverable"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:isScrollContainer="true"
+        app:layout_constraintBottom_toTopOf="@+id/bottom_navigation"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar2">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraint_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_constraintBottom_toBottomOf="@+id/scroll_deliverable"
+            app:layout_constraintEnd_toEndOf="@+id/scroll_deliverable"
+            app:layout_constraintStart_toStartOf="@+id/scroll_deliverable"
+            app:layout_constraintTop_toTopOf="@+id/scroll_deliverable">
+
+            <Button
+                android:id="@+id/next_button_deliverables"
+                android:layout_width="wrap_content"
+                android:layout_height="60dp"
+                android:layout_marginStart="24dp"
+                android:layout_marginLeft="24dp"
+                android:layout_marginTop="45dp"
+                android:layout_marginEnd="24dp"
+                android:layout_marginRight="24dp"
+                android:layout_marginBottom="32dp"
+                android:background="@drawable/custom_login_signin_btn"
+                android:ems="22"
+                android:enabled="false"
+                android:text="@string/create_comakership_next_btn"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                app:backgroundTint="@null"
+                app:layout_constraintBottom_toBottomOf="@+id/constraint_layout"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.49"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/deliverables_recyclerview" />
+
+            <ImageView
+                android:id="@+id/add_deliverable_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@null"
+                android:src="@drawable/task_alt"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="@+id/txt_inputlayout_deliverables"
+                app:layout_constraintStart_toEndOf="@+id/txt_inputlayout_deliverables"
+                app:layout_constraintTop_toTopOf="@+id/txt_inputlayout_deliverables" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/deliverables_recyclerview"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                app:layout_constraintEnd_toEndOf="@+id/constraint_layout"
+                app:layout_constraintStart_toStartOf="@+id/constraint_layout"
+                app:layout_constraintTop_toBottomOf="@+id/txt_inputlayout_deliverables">
+
+            </androidx.recyclerview.widget.RecyclerView>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/txt_inputlayout_deliverables"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginLeft="24dp"
+                android:layout_marginTop="24dp"
+                android:layout_marginEnd="24dp"
+                android:layout_marginRight="24dp"
+                android:minWidth="32dp"
+                app:boxStrokeColor="@color/primary_green"
+                app:boxStrokeWidth="0dp"
+                app:boxStrokeWidthFocused="0dp"
+                app:endIconTint="@color/primary_green"
+                app:errorEnabled="true"
+                app:hintTextColor="@color/primary_green"
+                app:layout_constraintEnd_toEndOf="@+id/constraint_layout"
+                app:layout_constraintStart_toStartOf="@+id/constraint_layout"
+                app:layout_constraintTop_toTopOf="@+id/constraint_layout"
+                app:layout_constraintWidth_min="32dp">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/txt_inputedittxt_deliverables"
+                    android:layout_width="match_parent"
+                    android:layout_height="120dp"
+                    android:hint="@string/create_comakership_deliverables"
+                    android:inputType="textMultiLine"
+                    android:isScrollContainer="false"
+                    android:maxLines="5"
+                    android:overScrollMode="never"
+                    android:textCursorDrawable="@drawable/custom_textinputet_text_highlight" />
+            </com.google.android.material.textfield.TextInputLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottom_navigation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="#E8E6E6"
+        android:foregroundGravity="bottom"
+        app:itemIconSize="20dp"
+        app:itemIconTint="@menu/nav_menu_selector"
+        app:itemTextColor="@menu/nav_menu_selector"
+        app:labelVisibilityMode="labeled"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/scroll_deliverable"
+        app:menu="@menu/nav_menu_company" />
+</androidx.constraintlayout.widget.ConstraintLayout>

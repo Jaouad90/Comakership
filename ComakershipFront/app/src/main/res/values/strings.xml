@@ -1,0 +1,67 @@
+<resources>
+    <!--    English-->
+    <string name="app_name">comakership</string>
+
+    <!--    Main-->
+    <string name="main_activity_title">Register</string>
+    <string name="signin_answer">SIGN IN...</string>
+    <string name="signin_question">ALREADY HAVE AN ACCOUNT?</string>
+    <string name="student_register">Register as student</string>
+    <string name="company_register">Register as company</string>
+
+    <!--    Login-->
+    <string name="login_activity_title">Sign In</string>
+    <string name="login_emailaddress">Email</string>
+    <string name="login_password">Password</string>
+    <string name="register_answer">REGISTER PAGE</string>
+    <string name="register_question">DONT YOU HAVE AN ACCOUNT?</string>
+
+    <!--    Register-->
+    <string name="register_company_activity_title">Sign up as company</string>
+    <string name="register_student_activity_title">Sign up as student</string>
+    <string name="register_street">Street</string>
+    <string name="register_city">City</string>
+    <string name="register_zipcode">Zip Code</string>
+    <string name="register_description">Description</string>
+    <string name="register_company_name">Company Name</string>
+    <string name="register_activity_continue_btn">Continue</string>
+    <string name="register_company_full_name">First &amp; Lastname</string>
+    <string name="register_student_nickname">Nickname</string>
+    <string name="register_company_user_email">Email</string>
+    <string name="register_company_user_password">Repeat Password</string>
+    <string name="register_company_create_button">Create Account</string>
+    <string name="register_student_programs">Choose a program:</string>
+
+    <!--    Company-->
+    <string name="company_dashboard_activity_title">Dashboard</string>
+    <string name="ic_nav_menu_teams">Teams</string>
+    <string name="ic_nav_menu_inbox">Inbox</string>
+    <string name="ic_nav_menu_home">Home</string>
+    <string name="ic_nav_menu_profile">Profile</string>
+    <string name="ic_nav_menu_comakerships">Comakerships</string>
+    <string name="no_data_available">No comakerships available!</string>
+    <string name="create_comakership_btn">COMAKERSHIP</string>
+    <string name="create_comakership_activity_title">Create Comakership</string>
+    <string name="create_comakership_company_create_button">Create Comakership</string>
+    <string name="create_comakership_form_title">Create simply a new comakership</string>
+    <string name="create_comakership_name">Project Name</string>
+    <string name="create_comakership_description">Project Description</string>
+    <string name="create_comakership_next_btn">Next</string>
+    <string name="create_comakership_purchasekey">Purchase key</string>
+    <string name="create_comakership_purchasekey_label">Use the purchase key:</string>
+    <string name="create_comakership_deliverables">Deliverable</string>
+
+    <!--    Student-->
+    <string name="student_dashboard_activity_title">Home</string>
+    <string name="search_comakerships_btn">Search Projects</string>
+    <string name="search_teams_btn">Search Teams</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="company_id_profile">Company ID :</string>
+    <string name="company_name_profile">Company Name :</string>
+    <string name="company_description_profile">Company Description :</string>
+    <string name="company_registration_date_profile">Registration Date :</string>
+    <string name="company_street_profile">Street :</string>
+    <string name="company_city_profile">City :</string>
+    <string name="company_zipcode_profile">Zipcode :</string>
+
+</resources>
